@@ -309,7 +309,7 @@ export default function DataAnalystPortfolio() {
       alt="Ian Shikami"
       fill
       className="object-cover"
-      style={{ objectPosition: 'center 50%' }}
+      style={{ objectPosition: 'center 20%' }}
       priority
     />
     {/* Data Grid Overlay */}
