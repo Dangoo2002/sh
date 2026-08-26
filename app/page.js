@@ -301,67 +301,77 @@ export default function DataAnalystPortfolio() {
       </AnimatePresence>
 
       <main className="pt-[72px]">
-<section id="home" className="relative min-h-[calc(100vh-72px)] flex items-center overflow-hidden">
-  {/* Background Image & Overlays */}
-  <div className="absolute inset-0 z-0">
-    <Image
-      src="/ian-hero.jpeg"
-      alt="Ian Shikami"
-      fill
-      className="object-cover"
-      style={{ objectPosition: 'center 20%' }}
-      priority
-    />
-    {/* Data Grid Overlay */}
-    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px]" />
-    {/* Gradient for Readability */}
-    <div className="absolute inset-0 bg-gradient-to-r from-[#222222] via-[#222222]/90 to-[#222222]/60 md:to-[#222222]/20" />
-    <div className="absolute inset-0 bg-gradient-to-t from-[#222222] via-[#222222]/50 to-transparent md:hidden" />
-  </div>
+               {/* ─── HERO (Modern Split Layout with Arch Image) ──────────────── */}
+        <section id="home" className="relative min-h-[calc(100vh-72px)] flex items-center py-12 lg:py-0 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            
+            {/* Left Content */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="flex-1 z-10 order-2 lg:order-1 text-center lg:text-left"
+            >
+              <p className="text-sm font-mono text-gray-400 mb-6 uppercase tracking-widest">
+                Available for Data Analysis Projects
+              </p>
+              
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                Turning Data Into <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Meaningful Business Insights</span>
+              </h1>
+              
+              <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Data Analyst skilled in SQL, PostgreSQL, Microsoft Excel, Power BI, Tableau, and Python. 
+                I specialize in transforming raw, complex datasets into clear, actionable insights 
+                that support informed business decision-making.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a
+                  href="#projects"
+                  onClick={(e) => scrollToSection(e, '#projects')}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#222222] font-semibold rounded hover:bg-neutral-200 transition-colors"
+                >
+                  Explore My Work
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <a
+                  href="#about"
+                  onClick={(e) => scrollToSection(e, '#about')}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/20 text-white font-medium rounded hover:bg-white/5 transition-colors"
+                >
+                  Learn More
+                </a>
+              </div>
+            </motion.div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-12 md:pt-0">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="max-w-2xl"
-    >
-      {/* Plain Text Status */}
-      <p className="text-sm font-mono text-white/80 mb-6 uppercase tracking-widest">
-        Available for Data Analysis Projects
-      </p>
+            {/* Right Image - Modern Arch Design */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="flex-1 relative order-1 lg:order-2 w-full max-w-md lg:max-w-none flex justify-center"
+            >
+              {/* Decorative Background Blob */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-cyan-500/10 to-purple-500/10 rounded-full blur-3xl -z-10" />
+              
+              {/* The Image Container */}
+              <div className="relative w-64 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[500px] rounded-t-full rounded-b-3xl overflow-hidden border-2 border-white/10 shadow-2xl">
+                <Image
+                  src="/ian-hero.jpeg"
+                  alt="Ian Shikami"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
+                {/* Subtle inner gradient for depth */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#222222]/40 to-transparent pointer-events-none" />
+              </div>
+            </motion.div>
 
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-        Turning Data Into <br />
-        <span className="text-white">Meaningful Business Insights</span>
-      </h1>
-
-      <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-xl">
-        Data Analyst skilled in SQL, PostgreSQL, Microsoft Excel, Power BI, Tableau, and Python.
-        I specialize in transforming raw, complex datasets into clear, actionable insights
-        that support informed business decision-making.
-      </p>
-
-      <div className="flex flex-col sm:flex-row gap-4">
-        <a
-          href="#projects"
-          onClick={(e) => scrollToSection(e, '#projects')}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#222222] font-semibold rounded hover:bg-neutral-200 transition-colors"
-        >
-          Explore My Work
-          <ArrowRight className="w-4 h-4" />
-        </a>
-        <a
-          href="#about"
-          onClick={(e) => scrollToSection(e, '#about')}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/20 text-white font-medium rounded hover:bg-white/5 transition-colors"
-        >
-          Learn More
-        </a>
-      </div>
-    </motion.div>
-  </div>
-</section>
+          </div>
+        </section>
 
         {/* ─── ABOUT ───────────────────────────────────────────────────── */}
         <section id="about" className="py-20 md:py-28 border-t border-white/5">
