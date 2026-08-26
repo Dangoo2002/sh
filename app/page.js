@@ -562,8 +562,8 @@ export default function DataAnalystPortfolio() {
                     </div>
                     <div>
                       <p className="text-xs font-mono text-gray-500 mb-1 uppercase tracking-wider">Email</p>
-                      <a href="mailto:kennarwana@gmail.com" className="text-white hover:text-gray-300 transition-colors">
-                        kennarwana@gmail.com
+                      <a href="mailto:ianshikami39@gmail.com" className="text-white hover:text-gray-300 transition-colors">
+                        ianshikami39@gmail.com
                       </a>
                     </div>
                   </div>
@@ -620,7 +620,7 @@ export default function DataAnalystPortfolio() {
 
               <div className="bg-[#2a2a2a] border border-white/10 rounded-xl p-6 md:p-8">
                 <form
-                  action="https://formsubmit.co/kennarwana@gmail.com"
+                  action="https://formsubmit.co/ianshikami39@gmail.com"
                   method="POST"
                   className="space-y-5"
                 >
