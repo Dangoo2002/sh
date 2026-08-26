@@ -301,12 +301,12 @@ export default function DataAnalystPortfolio() {
       </AnimatePresence>
 
       <main className="pt-[72px]">
-               {/* ─── HERO (Modern Split Layout with Arch Image) ──────────────── */}
+        {/* ─── HERO (Modern Split Layout with Arch Image) ──────────────── */}
         <section id="home" className="relative min-h-[calc(100vh-72px)] flex items-center py-12 lg:py-0 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            
+
             {/* Left Content */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -315,18 +315,18 @@ export default function DataAnalystPortfolio() {
               <p className="text-sm font-mono text-gray-400 mb-6 uppercase tracking-widest">
                 Available for Data Analysis Projects
               </p>
-              
+
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
                 Turning Data Into <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Meaningful Business Insights</span>
               </h1>
-              
+
               <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Data Analyst skilled in SQL, PostgreSQL, Microsoft Excel, Power BI, Tableau, and Python. 
-                I specialize in transforming raw, complex datasets into clear, actionable insights 
+                Data Analyst skilled in SQL, PostgreSQL, Microsoft Excel, Power BI, Tableau, and Python.
+                I specialize in transforming raw, complex datasets into clear, actionable insights
                 that support informed business decision-making.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
                   href="#projects"
@@ -347,7 +347,7 @@ export default function DataAnalystPortfolio() {
             </motion.div>
 
             {/* Right Image - Modern Arch Design */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
@@ -355,7 +355,7 @@ export default function DataAnalystPortfolio() {
             >
               {/* Decorative Background Blob */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-cyan-500/10 to-purple-500/10 rounded-full blur-3xl -z-10" />
-              
+
               {/* The Image Container */}
               <div className="relative w-64 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[500px] rounded-t-full rounded-b-3xl overflow-hidden border-2 border-white/10 shadow-2xl">
                 <Image
@@ -544,6 +544,7 @@ export default function DataAnalystPortfolio() {
         </section>
 
         {/* ─── CONTACT ─────────────────────────────────────────────────── */}
+        {/* ─── CONTACT ─────────────────────────────────────────────────── */}
         <section id="contact" className="py-20 md:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
@@ -561,8 +562,8 @@ export default function DataAnalystPortfolio() {
                     </div>
                     <div>
                       <p className="text-xs font-mono text-gray-500 mb-1 uppercase tracking-wider">Email</p>
-                      <a href="mailto:ianshikami39@gmail.com" className="text-white hover:text-gray-300 transition-colors">
-                        ianshikami39@gmail.com
+                      <a href="mailto:kennarwana@gmail.com" className="text-white hover:text-gray-300 transition-colors">
+                        kennarwana@gmail.com
                       </a>
                     </div>
                   </div>
@@ -580,29 +581,60 @@ export default function DataAnalystPortfolio() {
 
                 <div className="mt-10">
                   <p className="text-xs font-mono text-gray-500 mb-4 uppercase tracking-wider">Connect With Me</p>
-                  <div className="flex flex-wrap gap-3">
-                    <a href="https://github.com/ianshikami39" target="_blank" rel="noopener noreferrer" className="p-3 bg-[#2a2a2a] border border-white/10 rounded-lg text-gray-400 hover:text-white hover:border-white/50 transition-all">
-                      <GithubIcon className="w-5 h-5" />
+                  <div className="flex flex-wrap gap-5">
+                    <a
+                      href="https://github.com/ianshikami39"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      <GithubIcon className="w-6 h-6" />
                     </a>
-                    <a href="https://www.linkedin.com/in/ian-shik-01096326a" target="_blank" rel="noopener noreferrer" className="p-3 bg-[#2a2a2a] border border-white/10 rounded-lg text-gray-400 hover:text-white hover:border-white/50 transition-all">
-                      <LinkedinIcon className="w-5 h-5" />
+                    <a
+                      href="https://www.linkedin.com/in/ian-shik-01096326a"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      <LinkedinIcon className="w-6 h-6" />
                     </a>
-                    <a href="https://www.instagram.com/ianshik39/" target="_blank" rel="noopener noreferrer" className="p-3 bg-[#2a2a2a] border border-white/10 rounded-lg text-gray-400 hover:text-white hover:border-white/50 transition-all">
-                      <InstagramIcon className="w-5 h-5" />
+                    <a
+                      href="https://www.instagram.com/ianshik39/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      <InstagramIcon className="w-6 h-6" />
                     </a>
-                    <a href="https://x.com/Ianshikami" target="_blank" rel="noopener noreferrer" className="p-3 bg-[#2a2a2a] border border-white/10 rounded-lg text-gray-400 hover:text-white hover:border-white/50 transition-all">
-                      <XIcon className="w-5 h-5" />
+                    <a
+                      href="https://x.com/Ianshikami"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      <XIcon className="w-6 h-6" />
                     </a>
                   </div>
                 </div>
               </div>
 
               <div className="bg-[#2a2a2a] border border-white/10 rounded-xl p-6 md:p-8">
-                <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                <form
+                  action="https://formsubmit.co/kennarwana@gmail.com"
+                  method="POST"
+                  className="space-y-5"
+                >
+                  {/* FormSubmit Configuration Hidden Inputs */}
+                  <input type="hidden" name="_subject" value="New Portfolio Inquiry from Ian Shikami's Website" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
+
                   <div>
                     <label className="block text-xs font-mono text-gray-400 mb-2 uppercase tracking-wider">Full Name</label>
                     <input
                       type="text"
+                      name="name"
+                      required
                       className="w-full bg-[#222222] border border-white/10 text-white py-3 px-4 rounded-lg text-sm focus:outline-none focus:border-white transition-colors placeholder:text-gray-600"
                       placeholder="John Doe"
                     />
@@ -611,6 +643,8 @@ export default function DataAnalystPortfolio() {
                     <label className="block text-xs font-mono text-gray-400 mb-2 uppercase tracking-wider">Email Address</label>
                     <input
                       type="email"
+                      name="email"
+                      required
                       className="w-full bg-[#222222] border border-white/10 text-white py-3 px-4 rounded-lg text-sm focus:outline-none focus:border-white transition-colors placeholder:text-gray-600"
                       placeholder="john@company.com"
                     />
@@ -618,7 +652,9 @@ export default function DataAnalystPortfolio() {
                   <div>
                     <label className="block text-xs font-mono text-gray-400 mb-2 uppercase tracking-wider">Project Details</label>
                     <textarea
+                      name="message"
                       rows={4}
+                      required
                       className="w-full bg-[#222222] border border-white/10 text-white py-3 px-4 rounded-lg text-sm focus:outline-none focus:border-white transition-colors placeholder:text-gray-600 resize-none"
                       placeholder="Tell me about your data, goals, and timeline..."
                     />
