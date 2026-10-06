@@ -99,15 +99,6 @@ const projects = [
     image: '/netflix.png',
     tags: ['Tableau', 'Data Visualization', 'Content Analysis', 'Interactive Dashboards'],
     link: 'https://github.com/ianshikami39/Netflix-Content-Catalogue-Analysis'
-  },
-  {
-    id: 8,
-    title: 'Hybrid ML-Based Real-Time DDoS Detection',
-    category: 'Machine Learning / Cybersecurity',
-    description: 'A hybrid machine learning-based system for real-time detection and mitigation of Distributed Denial of Service (DDoS) attacks on web applications. Combines multiple ML algorithms to identify malicious traffic patterns and automatically trigger mitigation strategies.',
-    image: '/ddos-detection.jpeg',
-    tags: ['Machine Learning', 'Cybersecurity', 'Real-time Detection', 'Python'],
-    link: 'https://github.com/ianshikami39/Hybrid-ML-DDoS-Detection'
   }
 ];
 
@@ -472,61 +463,65 @@ export default function DataAnalystPortfolio() {
               <h3 className="text-3xl md:text-4xl font-bold text-white">Featured Data Projects</h3>
             </div>
 
-            {/* Updated grid: 1 col on mobile, 2 cols on tablet/desktop for equality */}
+            {/* Updated grid: 1 col on mobile, 2 cols on tablet/desktop */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {projects.map((project) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="group bg-[#2a2a2a] border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 flex flex-col"
-                >
-                  <div className="relative aspect-video w-full overflow-hidden bg-[#222222]">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      onError={(e) => {
-                        e.currentTarget.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop';
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2a2a2a] to-transparent opacity-60" />
-                  </div>
-
-                  <div className="p-6 flex flex-col flex-grow">
-                    <div className="mb-3">
-                      <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">{project.category}</span>
-                      <h4 className="text-xl font-bold text-white mt-1 group-hover:text-white transition-colors">
-                        {project.title}
-                      </h4>
+              {projects.map((project, index) => {
+                const isLast = index === projects.length - 1;
+                return (
+                  <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    // If it's the last item (7th), push it to the second column to center it visually
+                    className={`group bg-[#2a2a2a] border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 flex flex-col ${isLast ? 'md:col-start-2 md:max-w-xl md:mx-auto w-full' : ''}`}
+                  >
+                    <div className="relative aspect-video w-full overflow-hidden bg-[#222222]">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        onError={(e) => {
+                          e.currentTarget.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop';
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#2a2a2a] to-transparent opacity-60" />
                     </div>
 
-                    <p className="text-sm text-gray-400 leading-relaxed mb-4 flex-grow">
-                      {project.description}
-                    </p>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <div className="mb-3">
+                        <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">{project.category}</span>
+                        <h4 className="text-xl font-bold text-white mt-1 group-hover:text-white transition-colors">
+                          {project.title}
+                        </h4>
+                      </div>
 
-                    <div className="flex flex-wrap gap-2 mb-5">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="text-[10px] uppercase tracking-wider px-2 py-1 bg-white/5 text-gray-300 rounded border border-white/10">
-                          {tag}
-                        </span>
-                      ))}
+                      <p className="text-sm text-gray-400 leading-relaxed mb-4 flex-grow">
+                        {project.description}
+                      </p>
+
+                      <div className="flex flex-wrap gap-2 mb-5">
+                        {project.tags.map((tag) => (
+                          <span key={tag} className="text-[10px] uppercase tracking-wider px-2 py-1 bg-white/5 text-gray-300 rounded border border-white/10">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-white/5 border border-white/10 text-white text-sm font-medium rounded hover:bg-white hover:text-[#222222] hover:border-white transition-all"
+                      >
+                        View Project
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
                     </div>
-
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-white/5 border border-white/10 text-white text-sm font-medium rounded hover:bg-white hover:text-[#222222] hover:border-white transition-all"
-                    >
-                      View Project
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
