@@ -99,6 +99,15 @@ const projects = [
     image: '/netflix.png',
     tags: ['Tableau', 'Data Visualization', 'Content Analysis', 'Interactive Dashboards'],
     link: 'https://github.com/ianshikami39/Netflix-Content-Catalogue-Analysis'
+  },
+  {
+    id: 8,
+    title: 'Hybrid ML-Based Real-Time DDoS Detection',
+    category: 'Machine Learning / Cybersecurity',
+    description: 'A hybrid machine learning-based system for real-time detection and mitigation of Distributed Denial of Service (DDoS) attacks on web applications. Combines multiple ML algorithms to identify malicious traffic patterns and automatically trigger mitigation strategies.',
+    image: '/ddos-detection.jpeg',
+    tags: ['Machine Learning', 'Cybersecurity', 'Real-time Detection', 'Python'],
+    link: 'https://github.com/ianshikami39/Hybrid-ML-DDoS-Detection'
   }
 ];
 
@@ -463,7 +472,8 @@ export default function DataAnalystPortfolio() {
               <h3 className="text-3xl md:text-4xl font-bold text-white">Featured Data Projects</h3>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Updated grid: 1 col on mobile, 2 cols on tablet/desktop for equality */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {projects.map((project) => (
                 <motion.div
                   key={project.id}
@@ -552,7 +562,6 @@ export default function DataAnalystPortfolio() {
           </div>
         </section>
 
-        {/* ─── CONTACT ─────────────────────────────────────────────────── */}
         {/* ─── CONTACT ─────────────────────────────────────────────────── */}
         <section id="contact" className="py-20 md:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
