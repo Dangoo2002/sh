@@ -90,6 +90,15 @@ const projects = [
     image: '/cafe-sales.jpeg',
     tags: ['Data Cleaning', 'PostgreSQL', 'Excel', 'Data Validation'],
     link: 'https://github.com/ianshikami39/Cafe-Sales'
+  },
+  {
+    id: 7,
+    title: 'Netflix Content Catalogue Analysis',
+    category: 'Tableau / Data Visualization',
+    description: 'An interactive Tableau dashboard exploring the composition of a historical Netflix content catalogue. Examines title types, additions over time, audience ratings, genres, and production countries to support content coverage and acquisition decisions.',
+    image: '/netflix.png',
+    tags: ['Tableau', 'Data Visualization', 'Content Analysis', 'Interactive Dashboards'],
+    link: 'https://github.com/ianshikami39/Netflix-Content-Catalogue-Analysis'
   }
 ];
 
