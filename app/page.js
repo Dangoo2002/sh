@@ -463,65 +463,70 @@ export default function DataAnalystPortfolio() {
               <h3 className="text-3xl md:text-4xl font-bold text-white">Featured Data Projects</h3>
             </div>
 
-            {/* Updated grid: 1 col on mobile, 2 cols on tablet/desktop */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {projects.map((project, index) => {
-                const isLast = index === projects.length - 1;
-                return (
-                  <motion.div
-                    key={project.id}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    // If it's the last item (7th), push it to the second column to center it visually
-                    className={`group bg-[#2a2a2a] border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 flex flex-col ${isLast ? 'md:col-start-2 md:max-w-xl md:mx-auto w-full' : ''}`}
-                  >
-                    <div className="relative aspect-video w-full overflow-hidden bg-[#222222]">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        onError={(e) => {
-                          e.currentTarget.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop';
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#2a2a2a] to-transparent opacity-60" />
+            {/* 
+              UPDATED GRID LAYOUT:
+              - grid-cols-1 on mobile
+              - md:grid-cols-3 on tablet/desktop
+              
+              With 7 items, this creates:
+              Row 1: 3 items
+              Row 2: 3 items
+              Row 3: 1 item (automatically centered by grid layout)
+            */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {projects.map((project) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="group bg-[#2a2a2a] border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 flex flex-col h-full"
+                >
+                  <div className="relative aspect-video w-full overflow-hidden bg-[#222222]">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2a2a2a] to-transparent opacity-60" />
+                  </div>
+
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="mb-3">
+                      <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">{project.category}</span>
+                      <h4 className="text-xl font-bold text-white mt-1 group-hover:text-white transition-colors">
+                        {project.title}
+                      </h4>
                     </div>
 
-                    <div className="p-6 flex flex-col flex-grow">
-                      <div className="mb-3">
-                        <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">{project.category}</span>
-                        <h4 className="text-xl font-bold text-white mt-1 group-hover:text-white transition-colors">
-                          {project.title}
-                        </h4>
-                      </div>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-4 flex-grow">
+                      {project.description}
+                    </p>
 
-                      <p className="text-sm text-gray-400 leading-relaxed mb-4 flex-grow">
-                        {project.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-2 mb-5">
-                        {project.tags.map((tag) => (
-                          <span key={tag} className="text-[10px] uppercase tracking-wider px-2 py-1 bg-white/5 text-gray-300 rounded border border-white/10">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-white/5 border border-white/10 text-white text-sm font-medium rounded hover:bg-white hover:text-[#222222] hover:border-white transition-all"
-                      >
-                        View Project
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="text-[10px] uppercase tracking-wider px-2 py-1 bg-white/5 text-gray-300 rounded border border-white/10">
+                          {tag}
+                        </span>
+                      ))}
                     </div>
-                  </motion.div>
-                );
-              })}
+
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-white/5 border border-white/10 text-white text-sm font-medium rounded hover:bg-white hover:text-[#222222] hover:border-white transition-all"
+                    >
+                      View Project
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
